@@ -44,8 +44,7 @@ export default class GoogleTagManager extends BaseAdapter {
     delete compactedOptions['event'];
 
     for (let key in compactedOptions) {
-      const capitalizedKey = capitalize(key);
-      gtmEvent[`event${capitalizedKey}`] = compactedOptions[key];
+      gtmEvent[key] = compactedOptions[key];
     }
 
     window[dataLayer].push(gtmEvent);
